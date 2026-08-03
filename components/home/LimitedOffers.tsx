@@ -26,7 +26,7 @@ function useCountdown(targetDate: Date) {
 }
 
 export default function LimitedOffers() {
-  const target = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000);
+  const [target] = useState(() => new Date(Date.now() + 3 * 24 * 60 * 60 * 1000));
   const { days, hours, minutes, seconds } = useCountdown(target);
 
   const units = [
@@ -48,7 +48,7 @@ export default function LimitedOffers() {
           <h2 className="font-display text-4xl lg:text-6xl font-semibold mb-4">
             End of Season Sale
           </h2>
-          <p className="text-white/70 text-lg mb-10">Up to 40% off on selected pieces. Don't miss out.</p>
+          <p className="text-white/70 text-lg mb-10">Up to 40% off on selected pieces. Don&apos;t miss out.</p>
 
           {/* Countdown */}
           <div className="flex items-center justify-center gap-4 sm:gap-8 mb-12">

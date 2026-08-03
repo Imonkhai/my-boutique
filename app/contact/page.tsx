@@ -19,7 +19,7 @@ type FormData = z.infer<typeof schema>;
 const contactInfo = [
   { icon: MapPin, label: 'Address', value: '12 Rue de la Paix, Paris, France 75001' },
   { icon: Phone, label: 'Phone', value: '+33 1 23 45 67 89', href: 'tel:+33123456789' },
-  { icon: Mail, label: 'Email', value: 'hello@veloura.com', href: 'mailto:hello@veloura.com' },
+  { icon: Mail, label: 'Email', value: 'hello@giftcollection.com', href: 'mailto:hello@giftcollection.com' },
   { icon: Clock, label: 'Hours', value: 'Mon–Sat: 10:00–20:00 | Sun: 12:00–18:00' },
 ];
 

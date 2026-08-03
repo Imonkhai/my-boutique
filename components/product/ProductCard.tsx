@@ -33,8 +33,10 @@ export default function ProductCard({ product, className }: ProductCardProps) {
 
   const handleWishlist = (e: React.MouseEvent) => {
     e.preventDefault();
+    // Read current state BEFORE toggle so the message reflects what just happened
+    const wasWishlisted = wishlisted;
     toggle(product);
-    toast(wishlisted ? 'Removed from wishlist' : `${product.name} added to wishlist`, wishlisted ? 'info' : 'success');
+    toast(wasWishlisted ? 'Removed from wishlist' : `${product.name} added to wishlist`, wasWishlisted ? 'info' : 'success');
   };
 
   return (
@@ -47,7 +49,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
     >
       <Link href={`/product/${product.slug}`} className="block">
         {/* Image */}
-        <div className="relative aspect-product bg-[#F8F8F8] overflow-hidden">
+        <div className="relative aspect-product bg-bg overflow-hidden">
           <Image
             src={product.image}
             alt={product.name}
@@ -77,7 +79,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
           {/* Out of stock overlay */}
           {!product.inStock && (
             <div className="absolute inset-0 bg-white/60 flex items-center justify-center">
-              <span className="text-[11px] font-semibold tracking-widest uppercase text-[#6B6B6B]">Sold Out</span>
+              <span className="text-[11px] font-semibold tracking-widest uppercase text-muted">Sold Out</span>
             </div>
           )}
 
@@ -91,7 +93,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
             <button
               onClick={handleAddToCart}
               disabled={!product.inStock}
-              className="flex-1 py-2.5 bg-[#111111] text-white text-[10px] font-semibold tracking-widest uppercase hover:bg-[#D4AF37] hover:text-[#111111] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-1.5"
+              className="flex-1 py-2.5 bg-primary text-white text-[10px] font-semibold tracking-widest uppercase hover:bg-accent hover:text-primary transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-1.5"
               aria-label="Add to cart"
             >
               <ShoppingBag size={12} />
@@ -99,7 +101,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
             </button>
             <Link
               href={`/product/${product.slug}`}
-              className="w-10 h-10 bg-white flex items-center justify-center hover:bg-[#D4AF37] transition-colors"
+              className="w-10 h-10 bg-white flex items-center justify-center hover:bg-accent transition-colors"
               aria-label="Quick view"
             >
               <Eye size={14} />
@@ -110,7 +112,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
           <button
             onClick={handleWishlist}
             className={`absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center transition-all duration-300 ${
-              wishlisted ? 'bg-[#D4AF37] text-[#111111]' : 'bg-white text-[#111111] opacity-0 group-hover:opacity-100'
+              wishlisted ? 'bg-accent text-primary' : 'bg-white text-primary opacity-0 group-hover:opacity-100'
             }`}
             aria-label={wishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
           >
@@ -120,8 +122,8 @@ export default function ProductCard({ product, className }: ProductCardProps) {
 
         {/* Info */}
         <div className="pt-3 pb-1">
-          <p className="text-[10px] tracking-widest uppercase text-[#6B6B6B] mb-1">{product.category}</p>
-          <h3 className="font-medium text-sm text-[#111111] truncate group-hover:text-[#D4AF37] transition-colors">
+          <p className="text-[10px] tracking-widest uppercase text-muted mb-1">{product.category}</p>
+          <h3 className="font-medium text-sm text-primary truncate group-hover:text-accent transition-colors">
             {product.name}
           </h3>
           <div className="flex items-center gap-2 mt-1">
@@ -130,7 +132,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
           <div className="flex items-center gap-2 mt-1.5">
             <span className="font-semibold text-sm">{formatPrice(product.price)}</span>
             {product.originalPrice && (
-              <span className="text-xs text-[#6B6B6B] line-through">{formatPrice(product.originalPrice)}</span>
+              <span className="text-xs text-muted line-through">{formatPrice(product.originalPrice)}</span>
             )}
           </div>
           {/* Color swatches */}

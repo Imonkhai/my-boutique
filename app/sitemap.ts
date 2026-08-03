@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://velouraboutique.com';
+  const base = 'https://giftcollection.com';
   const routes = [
     '', '/shop', '/collections', '/new-arrivals', '/best-sellers',
     '/sale', '/about', '/contact', '/faq', '/blog', '/privacy', '/terms',

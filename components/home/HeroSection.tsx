@@ -91,7 +91,7 @@ export default function HeroSection() {
       <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col items-center gap-4">
         <div className="w-px h-16 bg-white/30" />
         <p className="text-white/40 text-[10px] tracking-[0.4em] uppercase rotate-90 whitespace-nowrap">
-          Veloura Boutique
+          Gift Collection
         </p>
         <div className="w-px h-16 bg-white/30" />
       </div>

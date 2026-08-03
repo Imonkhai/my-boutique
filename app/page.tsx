@@ -11,8 +11,8 @@ import BlogPreview from '@/components/home/BlogPreview';
 import FAQPreview from '@/components/home/FAQPreview';
 
 export const metadata: Metadata = {
-  title: 'Veloura Boutique — Elegant Fashion, Timeless Style',
-  description: 'Discover curated luxury fashion at Veloura Boutique. Shop premium dresses, blazers, accessories and more.',
+  title: 'Gift Collection — Elegant Fashion, Timeless Style',
+  description: 'Discover curated luxury fashion at Gift Collection. Shop premium dresses, blazers, accessories and more.',
 };
 
 export default function HomePage() {

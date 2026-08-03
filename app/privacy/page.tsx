@@ -3,7 +3,7 @@ import { Reveal } from '@/components/ui/Animations';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Veloura Boutique Privacy Policy — how we collect, use, and protect your data.',
+  description: 'Gift Collection Privacy Policy — how we collect, use, and protect your data.',
 };
 
 const sections = [
@@ -33,7 +33,7 @@ const sections = [
   },
   {
     title: '7. Contact Us',
-    content: 'If you have any questions about this Privacy Policy, please contact us at privacy@veloura.com or write to us at 12 Rue de la Paix, Paris, France 75001.',
+    content: 'If you have any questions about this Privacy Policy, please contact us at privacy@giftcollection.com or write to us at 12 Rue de la Paix, Paris, France 75001.',
   },
 ];
 
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
       <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <Reveal>
           <p className="text-[#6B6B6B] leading-relaxed mb-12">
-            At Veloura Boutique, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or make a purchase.
+            At Gift Collection, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or make a purchase.
           </p>
         </Reveal>
         <div className="space-y-10">

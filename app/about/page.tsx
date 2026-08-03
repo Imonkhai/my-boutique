@@ -6,7 +6,7 @@ import { Heart, Star, Globe, Leaf } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about Veloura Boutique — our story, mission, and the team behind the brand.',
+  description: 'Learn about Gift Collection — our story, mission, and the team behind the brand.',
 };
 
 const values = [
@@ -17,10 +17,10 @@ const values = [
 ];
 
 const timeline = [
-  { year: '2009', title: 'Founded in Paris', desc: 'Isabelle Veloura opens the first boutique on Rue de la Paix.' },
-  { year: '2012', title: 'First Online Store', desc: 'Veloura launches its e-commerce platform, reaching customers worldwide.' },
+  { year: '2009', title: 'Founded in Paris', desc: 'Isabelle Gift opens the first boutique on Rue de la Paix.' },
+  { year: '2012', title: 'First Online Store', desc: 'Gift Collection launches its e-commerce platform, reaching customers worldwide.' },
   { year: '2016', title: 'Sustainability Pledge', desc: 'We commit to 100% ethical sourcing across all product lines.' },
-  { year: '2020', title: 'Global Expansion', desc: 'Veloura ships to over 50 countries, becoming a truly global boutique.' },
+  { year: '2020', title: 'Global Expansion', desc: 'Gift Collection ships to over 50 countries, becoming a truly global boutique.' },
   { year: '2025', title: 'New Chapter', desc: 'Launching our most ambitious collection yet — a celebration of timeless style.' },
 ];
 
@@ -35,7 +35,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[#111111]/70" />
         <div className="relative z-10 text-white max-w-2xl mx-auto px-4">
           <p className="text-[#D4AF37] text-[11px] tracking-[0.5em] uppercase mb-4">Our Story</p>
-          <h1 className="font-display text-5xl lg:text-7xl font-semibold mb-4">About Veloura</h1>
+          <h1 className="font-display text-5xl lg:text-7xl font-semibold mb-4">About Gift Collection</h1>
           <p className="text-white/70 text-lg">Born from a passion for timeless elegance.</p>
         </div>
       </div>
@@ -47,7 +47,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-                alt="Veloura Boutique"
+                alt="Gift Collection"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -60,7 +60,7 @@ export default function AboutPage() {
               Curating Elegance Since 2009
             </h2>
             <p className="text-[#6B6B6B] leading-relaxed mb-4">
-              Veloura Boutique was founded with a singular vision: to bring the finest luxury fashion to women who appreciate quality, craftsmanship, and enduring style. What began as a small Parisian boutique has grown into a globally recognised name in luxury fashion.
+              Gift Collection was founded with a singular vision: to bring the finest luxury fashion to women who appreciate quality, craftsmanship, and enduring style. What began as a small Parisian boutique has grown into a globally recognised name in luxury fashion.
             </p>
             <p className="text-[#6B6B6B] leading-relaxed mb-8">
               Every piece in our collection is personally curated by our creative team, ensuring that each garment meets our exacting standards. We believe that true luxury lies not in excess, but in the perfect balance of beauty, quality, and purpose.
@@ -139,7 +139,7 @@ export default function AboutPage() {
         <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center mb-14">
             <p className="text-[#D4AF37] text-[11px] tracking-[0.5em] uppercase mb-3">Our Journey</p>
-            <h2 className="font-display text-4xl lg:text-5xl font-semibold text-[#111111]">The Veloura Story</h2>
+            <h2 className="font-display text-4xl lg:text-5xl font-semibold text-[#111111]">The Gift Collection Story</h2>
           </Reveal>
           <div className="relative">
             <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-[#E5E5E5]" />

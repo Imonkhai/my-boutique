@@ -3,13 +3,13 @@ import { Reveal } from '@/components/ui/Animations';
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions',
-  description: 'Veloura Boutique Terms and Conditions of use and purchase.',
+  description: 'Gift Collection Terms and Conditions of use and purchase.',
 };
 
 const sections = [
   {
     title: '1. Acceptance of Terms',
-    content: 'By accessing and using the Veloura Boutique website, you accept and agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our website.',
+    content: 'By accessing and using the Gift Collection website, you accept and agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our website.',
   },
   {
     title: '2. Products and Pricing',
@@ -29,11 +29,11 @@ const sections = [
   },
   {
     title: '6. Intellectual Property',
-    content: 'All content on this website, including text, graphics, logos, and images, is the property of Veloura Boutique and is protected by applicable intellectual property laws. You may not reproduce or distribute any content without our express written permission.',
+    content: 'All content on this website, including text, graphics, logos, and images, is the property of Gift Collection and is protected by applicable intellectual property laws. You may not reproduce or distribute any content without our express written permission.',
   },
   {
     title: '7. Limitation of Liability',
-    content: 'Veloura Boutique shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our website or products. Our total liability shall not exceed the amount paid for the specific product giving rise to the claim.',
+    content: 'Gift Collection shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our website or products. Our total liability shall not exceed the amount paid for the specific product giving rise to the claim.',
   },
 ];
 
@@ -47,7 +47,7 @@ export default function TermsPage() {
       <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <Reveal>
           <p className="text-[#6B6B6B] leading-relaxed mb-12">
-            Please read these Terms and Conditions carefully before using the Veloura Boutique website. These terms govern your use of our website and the purchase of products from us.
+            Please read these Terms and Conditions carefully before using the Gift Collection website. These terms govern your use of our website and the purchase of products from us.
           </p>
         </Reveal>
         <div className="space-y-10">

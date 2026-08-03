@@ -16,7 +16,7 @@ export default function FAQPreview() {
               Frequently Asked Questions
             </h2>
             <p className="text-[#6B6B6B] leading-relaxed mb-8">
-              Find answers to the most common questions about shopping at Veloura Boutique.
+              Find answers to the most common questions about shopping at Gift Collection.
             </p>
             <Link
               href="/faq"

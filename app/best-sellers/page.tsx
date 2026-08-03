@@ -5,7 +5,7 @@ import { Reveal, StaggerReveal, StaggerItem } from '@/components/ui/Animations';
 
 export const metadata: Metadata = {
   title: 'Best Sellers',
-  description: 'Shop our most-loved pieces at Veloura Boutique.',
+  description: 'Shop our most-loved pieces at Gift Collection.',
 };
 
 export default function BestSellersPage() {

@@ -17,7 +17,7 @@ export default function InstagramGallery() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center mb-10">
           <p className="text-[#D4AF37] text-[11px] tracking-[0.5em] uppercase mb-3">Follow Us</p>
-          <h2 className="font-display text-4xl lg:text-5xl font-semibold text-[#111111] mb-2">@VelouraBoutique</h2>
+          <h2 className="font-display text-4xl lg:text-5xl font-semibold text-[#111111] mb-2">@GiftCollection</h2>
           <p className="text-[#6B6B6B] text-sm">Join our community of style-conscious women</p>
         </Reveal>
 

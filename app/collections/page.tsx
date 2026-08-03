@@ -6,7 +6,7 @@ import { Reveal, StaggerReveal, StaggerItem } from '@/components/ui/Animations';
 
 export const metadata: Metadata = {
   title: 'Collections',
-  description: 'Explore our curated fashion collections at Veloura Boutique.',
+  description: 'Explore our curated fashion collections at Gift Collection.',
 };
 
 export default function CollectionsPage() {

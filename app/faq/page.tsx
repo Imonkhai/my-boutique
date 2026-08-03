@@ -5,7 +5,7 @@ import { Reveal } from '@/components/ui/Animations';
 
 export const metadata: Metadata = {
   title: 'FAQ',
-  description: 'Frequently asked questions about Veloura Boutique — orders, returns, sizing, and more.',
+  description: 'Frequently asked questions about Gift Collection — orders, returns, sizing, and more.',
 };
 
 const categories = ['All', 'Orders', 'Returns', 'Sizing', 'Payment', 'Products'];

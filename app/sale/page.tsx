@@ -5,7 +5,7 @@ import { Reveal, StaggerReveal, StaggerItem } from '@/components/ui/Animations';
 
 export const metadata: Metadata = {
   title: 'Sale — Up to 40% Off',
-  description: 'Shop our end of season sale at Veloura Boutique. Up to 40% off selected pieces.',
+  description: 'Shop our end of season sale at Gift Collection. Up to 40% off selected pieces.',
 };
 
 export default function SalePage() {

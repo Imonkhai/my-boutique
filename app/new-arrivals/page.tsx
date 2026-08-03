@@ -5,7 +5,7 @@ import { Reveal, StaggerReveal, StaggerItem } from '@/components/ui/Animations';
 
 export const metadata: Metadata = {
   title: 'New Arrivals',
-  description: 'Shop the latest arrivals at Veloura Boutique.',
+  description: 'Shop the latest arrivals at Gift Collection.',
 };
 
 export default function NewArrivalsPage() {

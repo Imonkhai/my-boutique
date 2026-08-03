@@ -7,7 +7,7 @@ import { Reveal, StaggerReveal, StaggerItem } from '@/components/ui/Animations';
 
 export const metadata: Metadata = {
   title: 'Style Journal',
-  description: 'Fashion insights, style guides, and trend reports from Veloura Boutique.',
+  description: 'Fashion insights, style guides, and trend reports from Gift Collection.',
 };
 
 export default function BlogPage() {

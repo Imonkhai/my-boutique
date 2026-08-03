@@ -42,7 +42,7 @@ export default function BlogPostPage() {
           <div className="prose prose-lg max-w-none">
             <p className="text-[#6B6B6B] leading-relaxed text-lg mb-6">{post.excerpt}</p>
             <p className="text-[#6B6B6B] leading-relaxed mb-6">
-              Fashion is not merely about clothing — it is a language, a form of self-expression that transcends trends and seasons. At Veloura, we believe in the power of a well-curated wardrobe to transform not just how you look, but how you feel.
+              Fashion is not merely about clothing — it is a language, a form of self-expression that transcends trends and seasons. At Gift Collection, we believe in the power of a well-curated wardrobe to transform not just how you look, but how you feel.
             </p>
             <p className="text-[#6B6B6B] leading-relaxed mb-6">
               The key to building a capsule wardrobe lies in selecting pieces that work harmoniously together. Start with a foundation of neutral tones — ivory, black, camel, and grey — then layer in accent pieces that reflect your personal aesthetic.

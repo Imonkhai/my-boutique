@@ -7,6 +7,7 @@ import { Search, Heart, ShoppingBag, User, Menu, X, ChevronDown } from 'lucide-r
 import { NAV_LINKS } from '@/constants';
 import { useCart, useWishlist } from '@/hooks/useStore';
 import { cn } from '@/utils';
+import Logo from '@/components/ui/Logo';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -59,7 +60,6 @@ export default function Navbar() {
   // Nav is transparent only on homepage before scroll
   const transparent = isHero && !scrolled;
   const textColor = transparent ? 'text-white' : 'text-[#111111]';
-  const logoColor = transparent ? 'text-white group-hover:text-[#D4AF37]' : 'text-[#111111] group-hover:text-[#D4AF37]';
 
   return (
     <>
@@ -82,11 +82,12 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-20">
 
             {/* Logo */}
-            <Link href="/" className="flex flex-col leading-none group">
-              <span className={cn('font-display text-xl lg:text-2xl font-bold tracking-[0.15em] transition-colors', logoColor)}>
-                VELOURA
-              </span>
-              <span className="text-[8px] tracking-[0.4em] text-[#D4AF37] uppercase">Boutique</span>
+            <Link href="/" aria-label="Gift Collection — Home">
+              <Logo
+                size="md"
+                color={transparent ? '#ffffff' : '#111111'}
+                className="transition-opacity hover:opacity-80"
+              />
             </Link>
 
             {/* Desktop Nav Links */}
@@ -296,9 +297,8 @@ export default function Navbar() {
             >
               {/* Drawer header */}
               <div className="flex items-center justify-between px-6 py-5 border-b border-[#E5E5E5]">
-                <Link href="/" onClick={() => setMobileOpen(false)} className="flex flex-col leading-none">
-                  <span className="font-display text-xl font-bold tracking-[0.15em] text-[#111111]">VELOURA</span>
-                  <span className="text-[8px] tracking-[0.4em] text-[#D4AF37] uppercase">Boutique</span>
+                <Link href="/" onClick={() => setMobileOpen(false)} aria-label="Gift Collection — Home">
+                  <Logo size="sm" color="#111111" />
                 </Link>
                 <button
                   onClick={() => setMobileOpen(false)}

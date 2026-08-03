@@ -22,7 +22,7 @@ export default function BrandStory() {
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80"
-                    alt="Veloura Brand Story"
+                    alt="Gift Collection Brand Story"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -43,7 +43,7 @@ export default function BrandStory() {
                 Born from a Passion for Timeless Elegance
               </h2>
               <p className="text-white/70 leading-relaxed mb-4">
-                Founded in Paris in 2009, Veloura Boutique was born from a singular vision: to make luxury fashion accessible to women who appreciate quality, craftsmanship, and enduring style.
+                Founded in Paris in 2009, Gift Collection was born from a singular vision: to make luxury fashion accessible to women who appreciate quality, craftsmanship, and enduring style.
               </p>
               <p className="text-white/70 leading-relaxed mb-8">
                 Every piece in our collection is personally curated by our creative team, ensuring that each garment meets our exacting standards for quality, fit, and elegance.
@@ -63,8 +63,8 @@ export default function BrandStory() {
       <section className="py-20 lg:py-28 bg-[#F8F8F8]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center mb-14">
-            <p className="text-[#D4AF37] text-[11px] tracking-[0.5em] uppercase mb-3">Why Veloura</p>
-            <h2 className="font-display text-4xl lg:text-5xl font-semibold text-[#111111]">The Veloura Difference</h2>
+            <p className="text-[#D4AF37] text-[11px] tracking-[0.5em] uppercase mb-3">Why Gift Collection</p>
+            <h2 className="font-display text-4xl lg:text-5xl font-semibold text-[#111111]">The Gift Collection Difference</h2>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -17,7 +17,7 @@ export const NAV_LINKS: NavLink[] = [
 
 export const PRODUCTS: Product[] = [
   {
-    id: '1', name: 'Silk Wrap Dress', price: 285, originalPrice: 380, discount: 25,
+    id: '1', name: 'Silk Wrap Dress', price: 285000, originalPrice: 380000, discount: 25,
     image: 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&q=80',
     hoverImage: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&q=80',
     category: 'Dresses', rating: 4.8, reviews: 124, badge: 'sale',
@@ -27,7 +27,7 @@ export const PRODUCTS: Product[] = [
     material: '100% Pure Silk',
   },
   {
-    id: '2', name: 'Cashmere Blazer', price: 420,
+    id: '2', name: 'Cashmere Blazer', price: 420000,
     image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80',
     hoverImage: 'https://images.unsplash.com/photo-1594938298603-c8148c4b4e5b?w=600&q=80',
     category: 'Blazers', rating: 4.9, reviews: 89, badge: 'bestseller',
@@ -37,7 +37,7 @@ export const PRODUCTS: Product[] = [
     material: '100% Cashmere',
   },
   {
-    id: '3', name: 'Linen Wide-Leg Trousers', price: 195,
+    id: '3', name: 'Linen Wide-Leg Trousers', price: 195000,
     image: 'https://images.unsplash.com/photo-1594938298603-c8148c4b4e5b?w=600&q=80',
     hoverImage: 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&q=80',
     category: 'Trousers', rating: 4.7, reviews: 67, badge: 'new',
@@ -47,7 +47,7 @@ export const PRODUCTS: Product[] = [
     material: '100% Linen',
   },
   {
-    id: '4', name: 'Structured Leather Bag', price: 650, originalPrice: 850, discount: 24,
+    id: '4', name: 'Structured Leather Bag', price: 650000, originalPrice: 850000, discount: 24,
     image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80',
     hoverImage: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80',
     category: 'Bags', rating: 5.0, reviews: 203, badge: 'sale',
@@ -57,7 +57,7 @@ export const PRODUCTS: Product[] = [
     material: 'Full-Grain Italian Leather',
   },
   {
-    id: '5', name: 'Merino Knit Sweater', price: 245,
+    id: '5', name: 'Merino Knit Sweater', price: 245000,
     image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80',
     hoverImage: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80',
     category: 'Knitwear', rating: 4.6, reviews: 45, badge: 'new',
@@ -67,7 +67,7 @@ export const PRODUCTS: Product[] = [
     material: '100% Merino Wool',
   },
   {
-    id: '6', name: 'Pleated Midi Skirt', price: 175, originalPrice: 220, discount: 20,
+    id: '6', name: 'Pleated Midi Skirt', price: 175000, originalPrice: 220000, discount: 20,
     image: 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=600&q=80',
     hoverImage: 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&q=80',
     category: 'Skirts', rating: 4.5, reviews: 78, badge: 'sale',
@@ -77,7 +77,7 @@ export const PRODUCTS: Product[] = [
     material: '100% Satin',
   },
   {
-    id: '7', name: 'Tailored Coat', price: 595,
+    id: '7', name: 'Tailored Coat', price: 595000,
     image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&q=80',
     hoverImage: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80',
     category: 'Coats', rating: 4.9, reviews: 156, badge: 'bestseller',
@@ -87,7 +87,7 @@ export const PRODUCTS: Product[] = [
     material: '80% Wool, 20% Cashmere',
   },
   {
-    id: '8', name: 'Silk Blouse', price: 165, originalPrice: 210, discount: 21,
+    id: '8', name: 'Silk Blouse', price: 165000, originalPrice: 210000, discount: 21,
     image: 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&q=80',
     hoverImage: 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=600&q=80',
     category: 'Tops', rating: 4.7, reviews: 92, badge: 'limited',

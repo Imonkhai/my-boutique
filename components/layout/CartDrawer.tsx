@@ -70,32 +70,57 @@ export default function CartDrawer() {
                 </div>
               ) : (
                 <ul className="space-y-5">
-                  {items.map(item => (
-                    <li key={`${item.id}-${item.selectedSize}-${item.selectedColor}`} className="flex gap-4">
-                      <div className="relative w-20 h-24 shrink-0 bg-[#F8F8F8] overflow-hidden">
+                  {items.map(item => {
+                    const lineKey = `${item.id}-${item.selectedSize}-${item.selectedColor}`;
+                    return (
+                    <li key={lineKey} className="flex gap-4">
+                      <Link href={`/product/${item.slug}`} onClick={() => setOpen(false)} className="relative w-20 h-24 shrink-0 bg-[#F8F8F8] overflow-hidden">
                         <Image src={item.image} alt={item.name} fill className="object-cover" sizes="80px" />
-                      </div>
+                      </Link>
                       <div className="flex-1 min-w-0">
-                        <p className="font-medium text-sm truncate">{item.name}</p>
-                        {item.selectedSize && <p className="text-xs text-[#6B6B6B] mt-0.5">Size: {item.selectedSize}</p>}
+                        <Link href={`/product/${item.slug}`} onClick={() => setOpen(false)}>
+                          <p className="font-medium text-sm truncate hover:text-[#D4AF37] transition-colors">{item.name}</p>
+                        </Link>
+                        <div className="flex gap-3 mt-0.5">
+                          {item.selectedSize && <p className="text-xs text-[#6B6B6B]">Size: {item.selectedSize}</p>}
+                          {item.selectedColor && (
+                            <span
+                              className="w-3.5 h-3.5 rounded-full border border-[#E5E5E5] inline-block mt-0.5"
+                              style={{ backgroundColor: item.selectedColor }}
+                            />
+                          )}
+                        </div>
                         <p className="text-sm font-semibold text-[#D4AF37] mt-1">{formatPrice(item.price)}</p>
                         <div className="flex items-center gap-3 mt-2">
                           <div className="flex items-center border border-[#E5E5E5]">
-                            <button onClick={() => updateQty(item.id, item.quantity - 1)} className="px-2 py-1 hover:bg-[#F8F8F8] transition-colors">
+                            <button
+                              onClick={() => updateQty(item.id, item.quantity - 1, item.selectedSize, item.selectedColor)}
+                              className="px-2 py-1 hover:bg-[#F8F8F8] transition-colors"
+                              aria-label="Decrease quantity"
+                            >
                               <Minus size={12} />
                             </button>
-                            <span className="px-3 text-sm">{item.quantity}</span>
-                            <button onClick={() => updateQty(item.id, item.quantity + 1)} className="px-2 py-1 hover:bg-[#F8F8F8] transition-colors">
+                            <span className="px-3 text-sm font-medium">{item.quantity}</span>
+                            <button
+                              onClick={() => updateQty(item.id, item.quantity + 1, item.selectedSize, item.selectedColor)}
+                              className="px-2 py-1 hover:bg-[#F8F8F8] transition-colors"
+                              aria-label="Increase quantity"
+                            >
                               <Plus size={12} />
                             </button>
                           </div>
-                          <button onClick={() => removeItem(item.id)} className="text-[#6B6B6B] hover:text-red-500 transition-colors">
+                          <button
+                            onClick={() => removeItem(item.id, item.selectedSize, item.selectedColor)}
+                            className="text-[#6B6B6B] hover:text-red-500 transition-colors"
+                            aria-label="Remove item"
+                          >
                             <Trash2 size={14} />
                           </button>
                         </div>
                       </div>
                     </li>
-                  ))}
+                    );
+                  })}
                 </ul>
               )}
             </div>

@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { Globe, Rss, Share2, CirclePlay, Mail, Phone, MapPin, CreditCard } from 'lucide-react';
+import Logo from '@/components/ui/Logo';
 
 const shopLinks = [
   { label: 'New Arrivals', href: '/new-arrivals' },
@@ -34,7 +35,7 @@ export default function Footer() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div>
-              <h3 className="font-display text-2xl lg:text-3xl font-semibold mb-2">Join the Veloura Circle</h3>
+              <h3 className="font-display text-2xl lg:text-3xl font-semibold mb-2">Join the Gift Collection Circle</h3>
               <p className="text-white/60 text-sm">Exclusive access to new arrivals, private sales, and style inspiration.</p>
             </div>
             <form className="flex w-full max-w-md gap-0" onSubmit={e => e.preventDefault()}>
@@ -59,9 +60,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-4">
-              <div className="font-display text-2xl font-bold tracking-[0.15em]">VELOURA</div>
-              <div className="text-[8px] tracking-[0.4em] text-[#D4AF37] uppercase">Boutique</div>
+            <div className="mb-5">
+              <Logo size="md" color="#ffffff" />
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               Curated luxury fashion for the discerning woman. Elegant fashion, timeless style.
@@ -122,7 +122,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm text-white/60">
                 <Mail size={15} className="shrink-0 text-[#D4AF37]" />
-                <a href="mailto:hello@veloura.com" className="hover:text-white transition-colors">hello@veloura.com</a>
+                <a href="mailto:hello@giftcollection.com" className="hover:text-white transition-colors">hello@giftcollection.com</a>
               </li>
             </ul>
             <div className="mt-6">
@@ -137,7 +137,7 @@ export default function Footer() {
       {/* Bottom */}
       <div className="border-t border-white/10">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-xs">© {new Date().getFullYear()} Veloura Boutique. All rights reserved.</p>
+          <p className="text-white/40 text-xs">© {new Date().getFullYear()} Gift Collection. All rights reserved.</p>
           <div className="flex items-center gap-2 text-white/40">
             <CreditCard size={20} />
             <span className="text-xs">Visa</span>
