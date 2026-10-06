@@ -7,7 +7,8 @@ export const sessions = new Map<string, AuthSession>();
 // ─── Simple hash (use bcrypt in production) ───────────────────────────────────
 export async function hashPassword(password: string): Promise<string> {
   const encoder = new TextEncoder();
-  const data = encoder.encode(password + process.env.AUTH_SECRET ?? 'gc-secret-2025');
+  const secret = process.env.AUTH_SECRET || 'gc-secret-2025';
+  const data = encoder.encode(password + secret);
   const hashBuffer = await crypto.subtle.digest('SHA-256', data);
   return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
 }
