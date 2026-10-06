@@ -15,6 +15,12 @@ import { formatPrice } from '@/utils';
 
 const PIE_COLORS = ['#D4AF37','#111111','#6B7280','#3B82F6','#10B981','#F59E0B','#EF4444'];
 
+const formatChartTooltipValue = (value: string | number | readonly (string | number)[] | undefined) => {
+  const rawValue = Array.isArray(value) ? value[0] : value;
+  const numericValue = typeof rawValue === 'string' ? Number(rawValue.replace(/[^\d.-]/g, '')) : Number(rawValue ?? 0);
+  return formatPrice(numericValue);
+};
+
 export default function AdminDashboard() {
   const totalRevenue = REVENUE_DATA.reduce((s, d) => s + d.revenue, 0);
   const totalOrders  = REVENUE_DATA.reduce((s, d) => s + d.orders, 0);
@@ -57,7 +63,7 @@ export default function AdminDashboard() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                 <XAxis dataKey="date" tick={{ fontSize: 10, fill: '#94a3b8' }} tickLine={false} axisLine={false} interval={2} />
                 <YAxis tick={{ fontSize: 10, fill: '#94a3b8' }} tickLine={false} axisLine={false} tickFormatter={v => `₦${(v/1000000).toFixed(1)}M`} />
-                <Tooltip formatter={(v: number) => [formatPrice(v), 'Revenue']} contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }} />
+                <Tooltip formatter={(value) => [formatChartTooltipValue(value), 'Revenue'] as [string, string]} contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }} />
                 <Line type="monotone" dataKey="revenue" stroke="#D4AF37" strokeWidth={2.5} dot={false} activeDot={{ r: 4, fill: '#D4AF37' }} />
               </LineChart>
             </ResponsiveContainer>
@@ -87,7 +93,7 @@ export default function AdminDashboard() {
                 <Pie data={CATEGORY_DATA} dataKey="percentage" nameKey="category" cx="50%" cy="50%" outerRadius={75} innerRadius={40}>
                   {CATEGORY_DATA.map((_, i) => <Cell key={i} fill={PIE_COLORS[i % PIE_COLORS.length]} />)}
                 </Pie>
-                <Tooltip formatter={(v: number) => [`${v}%`, 'Share']} contentStyle={{ fontSize: 12, borderRadius: 8 }} />
+                <Tooltip formatter={(value) => [`${Number(Array.isArray(value) ? value[0] ?? 0 : value ?? 0)}%`, 'Share'] as [string, string]} contentStyle={{ fontSize: 12, borderRadius: 8 }} />
                 <Legend iconSize={8} wrapperStyle={{ fontSize: 11 }} />
               </PieChart>
             </ResponsiveContainer>

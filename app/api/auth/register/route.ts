@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
     const passwordHash = await hashPassword(password);
     users.set(user.id, { user, passwordHash });
 
-    const session = createSession(user);
+    const session = await createSession(user);
 
     const res = NextResponse.json({ user, message: 'Account created successfully' }, { status: 201 });
     res.headers.set('Set-Cookie', buildSetCookie(session.token, 7 * 24 * 60 * 60));

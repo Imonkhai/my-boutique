@@ -24,7 +24,7 @@ const schema = z.object({
   stock: z.coerce.number().min(0, 'Required'),
   lowStockThreshold: z.coerce.number().min(1).default(5),
   status: z.enum(['active', 'draft', 'archived']),
-  featuredImage: z.string().url('Enter a valid URL').optional().or(z.literal('')),
+  featuredImage: z.string().optional().or(z.literal('')),
   tags: z.string().optional(),
 });
 
@@ -41,20 +41,35 @@ export default function NewProductPage() {
   const [colorInput, setColorInput] = useState('#808080');
   const [saved, setSaved] = useState(false);
 
-  const { register, handleSubmit, formState: { errors }, watch } = useForm<FormData>({
+  const form = useForm({
     resolver: zodResolver(schema),
-    defaultValues: { status: 'draft', lowStockThreshold: 5 },
+    defaultValues: { status: 'draft', lowStockThreshold: 5, featuredImage: '' },
   });
+  const { register, handleSubmit, formState: { errors }, watch, setValue } = form;
+
+  const handleFeaturedImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = typeof reader.result === 'string' ? reader.result : '';
+      setValue('featuredImage', result, { shouldValidate: true, shouldDirty: true });
+    };
+    reader.readAsDataURL(file);
+  };
 
   const onSubmit = (data: FormData, publish = false) => {
     const newProduct = {
       ...data,
       id: `${ADMIN_PRODUCTS.length + 1}`,
       slug: data.name.toLowerCase().replace(/\s+/g, '-'),
+      collection: data.collection ?? 'General',
+      material: data.material ?? '',
       sizes, colors,
       images: data.featuredImage ? [data.featuredImage] : [],
       featuredImage: data.featuredImage || '',
-      tags: data.tags ? data.tags.split(',').map(t => t.trim()) : [],
+      tags: data.tags ? data.tags.split(',').map(t => t.trim()).filter(Boolean) : [],
       status: publish ? 'active' as const : data.status,
       rating: 0, reviews: 0, unitsSold: 0, revenue: 0,
       reserved: 0,
@@ -243,8 +258,13 @@ export default function NewProductPage() {
             <div className="bg-white rounded-xl border border-slate-200 p-5 space-y-3">
               <h3 className="font-semibold text-sm text-slate-800 border-b border-slate-100 pb-3">Featured Image</h3>
               <div>
-                <label className={labelCls}>Image URL</label>
-                <input {...register('featuredImage')} placeholder="https://images.unsplash.com/…" className={inputCls} />
+                <label className={labelCls}>Upload image</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleFeaturedImageChange}
+                  className="block w-full text-sm text-slate-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200"
+                />
                 {errors.featuredImage && <p className="text-red-500 text-xs mt-1">{errors.featuredImage.message}</p>}
               </div>
               {featuredImage && (

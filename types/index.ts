@@ -76,6 +76,7 @@ export interface User {
   lastName: string;
   email: string;
   phone?: string;
+  role?: 'customer' | 'admin' | 'manager';
   createdAt: string;
   addresses?: Address[];
 }

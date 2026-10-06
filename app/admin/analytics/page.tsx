@@ -12,6 +12,12 @@ import { formatPrice } from '@/utils';
 const PERIODS = ['Today', '7 Days', '30 Days', '3 Months', '12 Months'];
 const PIE_COLORS = ['#D4AF37','#111111','#6B7280','#3B82F6','#10B981','#F59E0B','#EF4444'];
 
+const formatTooltipValue = (value: string | number | readonly (string | number)[] | undefined) => {
+  const rawValue = Array.isArray(value) ? value[0] : value;
+  const numericValue = typeof rawValue === 'string' ? Number(rawValue.replace(/[^\d.-]/g, '')) : Number(rawValue ?? 0);
+  return formatPrice(numericValue);
+};
+
 export default function AnalyticsPage() {
   const [period, setPeriod] = useState('30 Days');
 
@@ -68,7 +74,7 @@ export default function AnalyticsPage() {
               <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
               <XAxis dataKey="date" tick={{ fontSize: 11, fill: '#94a3b8' }} tickLine={false} axisLine={false} />
               <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} tickLine={false} axisLine={false} tickFormatter={v => `₦${(v/1000000).toFixed(1)}M`} />
-              <Tooltip formatter={(v: number) => [formatPrice(v), 'Revenue']} contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }} />
+              <Tooltip formatter={(value) => [formatTooltipValue(value), 'Revenue'] as [string, string]} contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }} />
               <Area type="monotone" dataKey="revenue" stroke="#D4AF37" strokeWidth={2.5} fill="url(#revenueGrad)" dot={false} activeDot={{ r: 4 }} />
             </AreaChart>
           </ResponsiveContainer>
@@ -99,7 +105,7 @@ export default function AnalyticsPage() {
                 <Pie data={CATEGORY_DATA} dataKey="revenue" nameKey="category" cx="50%" cy="50%" outerRadius={90} innerRadius={50}>
                   {CATEGORY_DATA.map((_, i) => <Cell key={i} fill={PIE_COLORS[i % PIE_COLORS.length]} />)}
                 </Pie>
-                <Tooltip formatter={(v: number) => [formatPrice(v), 'Revenue']} contentStyle={{ fontSize: 12, borderRadius: 8 }} />
+                <Tooltip formatter={(value) => [formatTooltipValue(value), 'Revenue'] as [string, string]} contentStyle={{ fontSize: 12, borderRadius: 8 }} />
                 <Legend iconSize={8} wrapperStyle={{ fontSize: 11 }} />
               </PieChart>
             </ResponsiveContainer>
@@ -114,7 +120,7 @@ export default function AnalyticsPage() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                 <XAxis dataKey="date" tick={{ fontSize: 10, fill: '#94a3b8' }} tickLine={false} axisLine={false} interval={2} />
                 <YAxis tick={{ fontSize: 10, fill: '#94a3b8' }} tickLine={false} axisLine={false} tickFormatter={v => `₦${(v/1000).toFixed(0)}K`} />
-                <Tooltip formatter={(v: number) => [formatPrice(v), 'AOV']} contentStyle={{ fontSize: 12, borderRadius: 8 }} />
+                <Tooltip formatter={(value) => [formatTooltipValue(value), 'AOV'] as [string, string]} contentStyle={{ fontSize: 12, borderRadius: 8 }} />
                 <Line type="monotone" dataKey="avgOrderValue" stroke="#3B82F6" strokeWidth={2} dot={false} activeDot={{ r: 4 }} />
               </LineChart>
             </ResponsiveContainer>

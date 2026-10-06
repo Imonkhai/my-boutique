@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import ClientShell from '@/components/layout/ClientShell';
+import AppFrame from '@/components/layout/AppFrame';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://giftcollection.com'),
@@ -41,11 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="min-h-screen flex flex-col antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        {/* Client-only overlays: cart drawer, toasts, back-to-top, whatsapp */}
-        <ClientShell />
+        <AppFrame>{children}</AppFrame>
       </body>
     </html>
   );
